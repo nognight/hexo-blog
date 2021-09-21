@@ -1,0 +1,7 @@
+- class_name: link for trialFE
+  class_desc: this is the frontend project for trialSC
+  link_list:
+    - name: trialFE
+      link: https://trialfe.netlify.app/
+      avatar:
+      descr: 
