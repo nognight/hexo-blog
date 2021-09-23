@@ -1,7 +1,10 @@
 ---
 title: info about a15
 date: 2021-09-21 18:15:29
-tags: a15,soc,apple
+tags: 
+- a15
+- soc
+- apple
 ---
 
 
