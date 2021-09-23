@@ -1,7 +1,10 @@
 ---
 title: how to open mysql event
 date: 2020-01-10 22:30:22
-tags: mysql,event,procedure
+tags: 
+- mysql
+- event
+- procedure
 ---
 
 
