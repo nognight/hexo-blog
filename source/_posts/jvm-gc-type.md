@@ -26,7 +26,7 @@ tags:
 ```
 -XX:+UseG1GC
 ```
-- (Garbage First)：其目标是尽可能完全避免full gc，即老年代的STW，优先考虑暂停时间、其次才是吞吐量，所以更像是cms的升级版。
+- (Garbage First)：其目标是尽可能完全避免full gc，即老年代的STW，优先考虑暂停时间、其次才是吞吐量，所以更像是cms的升级版。jdk9默认GC
 - 可以直观的设值停顿时间，相对于CMS GC ，G1未必能做到CMS最好情况下的延时停顿，但比最差情况要好得多
 - G1 仍存在年代的概念，使用了Region棋盘算法，实际上是标记-整理（Mark-Compact）算法，可以避免内存碎片，尤其是heap非常大的时候，G1优势明显。
 - G1 吞吐量和停顿表现都OK。
@@ -37,6 +37,7 @@ tags:
 -XX:+UseParallelGC
 ```
 - jdk8,server模式JVM的默认GC选择，吞吐量优先。
+- 随着负载加大，以及更大的堆，GC的停顿时间也会增加。
 
 
 # ZGC
