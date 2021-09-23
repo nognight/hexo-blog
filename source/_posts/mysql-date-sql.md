@@ -1,7 +1,10 @@
 ---
 title: Some sql for date in mysql
 date: 2020-09-20 12:30:22
-tags: mysql,date,sql
+tags: 
+- mysql
+- date
+- sql
 ---
 
 
