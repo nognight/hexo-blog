@@ -1,7 +1,9 @@
 ---
 title: some type for jvm gc
 date: 2020-03-20 12:30:22
-tags: jvm,gc
+tags: 
+- jvm 
+- gc
 ---
 
 
