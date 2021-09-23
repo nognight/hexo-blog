@@ -1,6 +1,6 @@
 ---
 title: jvm heap
-date: 2020-03-20 12:30:22
+date: 2020-03-19 12:30:22
 tags: jvm,heap
 ---
 
