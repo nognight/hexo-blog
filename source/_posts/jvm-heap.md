@@ -1,7 +1,9 @@
 ---
 title: jvm heap
 date: 2020-03-19 12:30:22
-tags: jvm,heap
+tags: 
+- jvm
+- heap
 ---
 
 
