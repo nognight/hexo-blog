@@ -1,7 +1,10 @@
 ---
 title: Some command to dump data for mysql
 date: 2019-09-22 12:20:23
-tags: mysql,mysqldump,dump
+tags: 
+- mysql
+- mysqldump
+- dump
 ---
 
 
