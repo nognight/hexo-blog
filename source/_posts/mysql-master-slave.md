@@ -1,7 +1,9 @@
 ---
 title: setup the master slave mode for mysql
 date: 2019-08-20 22:30:22
-tags: master-slave,mysql
+tags: 
+- master-slave
+- mysql
 ---
 
 # setup the one master two slave mode for mysql
