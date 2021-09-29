@@ -1,6 +1,6 @@
 ---
 title: Some command to create database and user for mysql
-date: 2019-09-20 22:30:22
+date: 2019-09-20 21:39:22
 tags: mysql
 ---
 
