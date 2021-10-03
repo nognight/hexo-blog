@@ -6,7 +6,6 @@ tags: kotlin
 
 
 # null-safety
-
 ```kotlin
 data class Person(val name:String)
 
@@ -23,7 +22,7 @@ fun main(args: Array<String>) {
 
 ```
 
-
+# null-safety
 ```kotlin
 data class Person(val name:String)
 
