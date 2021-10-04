@@ -6,14 +6,7 @@ cover: false
 ---
 
 
-# demo
-
-##
-
-### delete the database if it is already exsit
-
-
-## flush
-```sql
-flush privileges;  
+# nasukogen offical site
+```
+https://www.nasukogen.org/
 ```
