@@ -10,4 +10,3 @@ cover: false
 ```
 https://www.nasukogen.org/
 ```
-
