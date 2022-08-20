@@ -39,6 +39,9 @@ x = 5
 y = "John"
 print(x)
 print(y)
+
+test_var = "I am  camel"
+testVar = "I am snake"
 ```
 
 ## Data types
@@ -119,6 +122,31 @@ fig.tight_layout()
 plt.show()
 ```
 
+
+## Statement
+
+### condition
+```python
+a = 33
+b = 200
+if b > a:
+  print("b is greater than a")
+```
+
+
+### loop
+```python
+i = 1
+while i < 6:
+  print(i)
+  if i == 3:
+    break
+  i += 1
+
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+```
 
 
 
