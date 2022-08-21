@@ -149,6 +149,11 @@ for x in fruits:
 ```
 
 
+## diagram
+![](/images/lesson-1.png)
+
+
+
 
 
 
