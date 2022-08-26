@@ -56,23 +56,23 @@ pip3 install xxxxxx
 ```
 
 ## how to use IDE
-- pycharm
+### pycharm
 
-### win
+- win
 ```shell
 scoop install pycharm
 ```
-### mac
+- mac
 ```shell
 brew install pycharm
 ```
-- vscode
+### vscode
 
-### win
+- win
 ```shell
 scoop install vscode
 ```
-### mac
+- mac
 ```shell
 brew install --cask visual-studio-code
 ```
@@ -124,6 +124,7 @@ with pd.ExcelWriter('test_data.xlsx', mode='a') as writer:
 ```
 
 - read data from a xlsx
+
 ```python
 import pandas as pd
 
