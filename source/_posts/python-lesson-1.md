@@ -40,8 +40,8 @@ y = "John"
 print(x)
 print(y)
 
-test_var = "I am  camel"
-testVar = "I am snake"
+test_var = "I am  snake"
+testVar = "I am camel"
 ```
 
 ## Data types
