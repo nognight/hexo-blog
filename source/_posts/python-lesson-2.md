@@ -56,13 +56,23 @@ pip3 install xxxxxx
 ```
 
 ## how to use IDE
-
+- pycharm
+win
 ```shell
 scoop install pycharm
 ```
-
+mac
 ```shell
 brew install pycharm
+```
+- vscode
+win
+```shell
+scoop install vscode
+```
+mac
+```shell
+brew install --cask visual-studio-code
 ```
 
 ## read data from excel
