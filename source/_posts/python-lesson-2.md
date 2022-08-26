@@ -150,8 +150,6 @@ for label, content in data_1.items():
 
 ```
 
-## diagram
-![](/images/lesson-2.png)
 
 
 
