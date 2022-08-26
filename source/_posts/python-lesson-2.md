@@ -77,6 +77,12 @@ scoop install vscode
 brew install --cask visual-studio-code
 ```
 
+- android
+```shell
+pkg install python
+```
+
+
 ## read data from excel
 
 - export a xlsx
@@ -132,9 +138,9 @@ data_1 = pd.read_excel('test_data.xlsx', sheet_name='sheet_1')
 
 data_1.to_html('test_data_1.html')
 
-data_2 = pd.read_excel('test_data.xlsx', sheet_name='sheet_1')
+data_2 = pd.read_excel('test_data.xlsx', sheet_name='sheet_2')
 
-data_1.to_html('test_data_2.html')
+data_2.to_html('test_data_2.html')
 
 for label, content in data_1.items():
     print('===================')
