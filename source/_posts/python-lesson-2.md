@@ -67,6 +67,79 @@ brew install pycharm
 
 ## read data from excel
 
+- export a xlsx
+```python
+import pandas as pd
+import random
+
+
+COLUMNS = ('Man', 'Woman')
+
+i = 0
+
+score_list = []
+
+while i < 100:
+    score = (random.randint(10, 50), random.randint(24, 45))
+    score_list.append(score)
+    i += 1
+
+df = pd.DataFrame(
+    score_list,
+    columns=COLUMNS
+)
+
+df.to_excel("test_data.xlsx", index=False, sheet_name='sheet_1')
+
+#sheet2
+score_list_2 = []
+
+i = 0
+
+while i < 10:
+    score = (random.randint(10, 50), random.randint(24, 45))
+    score_list_2.append(score)
+    i += 1
+
+df2 = pd.DataFrame(
+    score_list_2,
+    columns=COLUMNS
+)
+
+with pd.ExcelWriter('test_data.xlsx', mode='a') as writer:
+    df2.to_excel(writer, index=False, sheet_name='sheet_2')
+
+```
+
+- read data from a xlsx
+```python
+import pandas as pd
+
+data_1 = pd.read_excel('test_data.xlsx', sheet_name='sheet_1')
+
+data_1.to_html('test_data_1.html')
+
+data_2 = pd.read_excel('test_data.xlsx', sheet_name='sheet_1')
+
+data_1.to_html('test_data_2.html')
+
+for label, content in data_1.items():
+    print('===================')
+    print(f'label: {label}')
+    print(f'content: {content}')
+
+
+man_total = 0
+woman_total = 0
+
+for label, content in data_1.items():
+    print('===================')
+    print(f'sum-{label}:{content.sum()}')
+    print(f'max-{label}:{content.max()}')
+    print(f'min-{label}:{content.min()}')
+
+```
+
 ## diagram
 ![](/images/lesson-2.png)
 
