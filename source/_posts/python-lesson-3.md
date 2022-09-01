@@ -1,1 +1,112 @@
+---
+title: Python Starter lesson-3
+date: 2022-09-01 11:30:22
+tags: python
+---
+
+# about gfw
+
+
+# how to prepare python runtime for android
+
+# what is crawler
+
+## how to choose crawler framework
+
+## demo
+
+### install scrapy
+```shell
+pip3 install scrapy
+```
+### create  project
+```
+scrapy createproject good_job
+```
+### create a spider
+```python
+from good_job.items import GoodJobItem
+
+import scrapy
+from urllib.parse import urljoin
+
+class FirstSpider(scrapy.Spider):
+    name = 'first'
+    allowed_domain = ['douban.com']
+    start_urls = ['https://movie.douban.com/top250']
+
+    def parse(self, response):
+        item = GoodJobItem()
+        selector = scrapy.Selector(response)
+        Movies = selector.xpath('//div[@class="info"]')
+        for eachMovie in Movies:
+            title = eachMovie.xpath('div[@class="hd"]/a/span/text()').extract()
+            fullTitle = "".join(title) 
+            movieInfo = eachMovie.xpath('div[@class="bd"]/p/text()').extract()
+            star = eachMovie.xpath('div[@class="bd"]/div[@class="star"]/span/text()').extract()[0]
+            quote = eachMovie.xpath('div[@class="bd"]/p[@class="quote"]/span/text()').extract()
+    
+            if quote:
+                quote = quote[0]
+            else:
+                quote = ''
+            item['title'] = fullTitle
+            item['movieInfo'] = ';'.join(movieInfo)
+            item['star'] = star
+            item['quote'] = quote
+            yield item
+        nextLink = selector.xpath('//span[@class="next"]/link/@href').extract()
+        
+        if nextLink:
+            nextLink = nextLink[0]
+            yield scrapy.Request(urljoin(response.url, nextLink), callback=self.parse)
+```
+### create pipeline
+```
+# Define your item pipelines here
+#
+# Don't forget to add your pipeline to the ITEM_PIPELINES setting
+# See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+
+
+# useful for handling different item types with a single interface
+from itemadapter import ItemAdapter
+
+import pandas as pd
+
+
+COLUMNS = ('title', 'movieInfo', 'star', 'quote')
+
+
+class GoodJobPipeline:
+
+    data_list = []
+
+    def __init__(self):
+        print('init')
+
+    def process_item(self, item, spider):
+        self.data_list.append(
+            (item['title'], item['movieInfo'], item['star'], item['quote']))
+        return item
+
+    def close_spider(self, spider):
+        df = pd.DataFrame(
+            self.data_list,
+            columns=COLUMNS
+        )
+        df.to_excel("first_spider.xlsx", index=False, sheet_name='douban')
+
+```
+
+### modify setting
+```python
+
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
+
+ITEM_PIPELINES = {
+   'good_job.pipelines.GoodJobPipeline': 300,
+}
+```
+
 
