@@ -6,14 +6,23 @@ tags: python
 
 # about gfw
 
+## how it works
+## what we can do
+- change hosts
+- change dns
+- use proxy
 
 # how to prepare python runtime for android
+- use the latest version for Termux v0.118.0
 
 # what is crawler
+- 
 
 ## how to choose crawler framework
+### scrapy
+- high perfomance
 
-## demo
+## start our demo
 
 ### install scrapy
 ```shell
@@ -62,7 +71,7 @@ class FirstSpider(scrapy.Spider):
             yield scrapy.Request(urljoin(response.url, nextLink), callback=self.parse)
 ```
 ### create pipeline
-```
+```python
 # Define your item pipelines here
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
