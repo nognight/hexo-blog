@@ -32,6 +32,20 @@ pip3 install scrapy
 ```
 scrapy createproject good_job
 ```
+
+### add items
+```python
+import scrapy
+
+class GoodJobItem(scrapy.Item):
+    # define the fields for your item here like:
+    title = scrapy.Field()
+    movieInfo = scrapy.Field()
+    star = scrapy.Field()
+    quote = scrapy.Field()
+    pass
+```
+
 ### create a spider
 ```python
 from good_job.items import GoodJobItem
