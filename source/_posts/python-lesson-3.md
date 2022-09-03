@@ -72,28 +72,28 @@ class FirstSpider(scrapy.Spider):
     def parse(self, response):
         item = GoodJobItem()
         selector = scrapy.Selector(response)
-        Movies = selector.xpath('//div[@class="info"]')
-        for eachMovie in Movies:
-            title = eachMovie.xpath('div[@class="hd"]/a/span/text()').extract()
-            fullTitle = "".join(title) 
-            movieInfo = eachMovie.xpath('div[@class="bd"]/p/text()').extract()
-            star = eachMovie.xpath('div[@class="bd"]/div[@class="star"]/span/text()').extract()[0]
-            quote = eachMovie.xpath('div[@class="bd"]/p[@class="quote"]/span/text()').extract()
+        movies = selector.xpath('//div[@class="info"]')
+        for each_movie in movies:
+            title = each_movie.xpath('div[@class="hd"]/a/span/text()').extract()
+            full_title = "".join(title) 
+            movie_info = each_movie.xpath('div[@class="bd"]/p/text()').extract()
+            star = each_movie.xpath('div[@class="bd"]/div[@class="star"]/span/text()').extract()[0]
+            quote = each_movie.xpath('div[@class="bd"]/p[@class="quote"]/span/text()').extract()
     
             if quote:
                 quote = quote[0]
             else:
                 quote = ''
-            item['title'] = fullTitle
-            item['movieInfo'] = ';'.join(movieInfo)
+            item['title'] = full_title
+            item['movie_info'] = ';'.join(movie_info)
             item['star'] = star
             item['quote'] = quote
             yield item
-        nextLink = selector.xpath('//span[@class="next"]/link/@href').extract()
+        next_link = selector.xpath('//span[@class="next"]/link/@href').extract()
         
-        if nextLink:
-            nextLink = nextLink[0]
-            yield scrapy.Request(urljoin(response.url, nextLink), callback=self.parse)
+        if next_link:
+            next_link = next_link[0]
+            yield scrapy.Request(urljoin(response.url, next_link), callback=self.parse)
 ```
 ### create pipeline
 ```python
@@ -109,7 +109,7 @@ from itemadapter import ItemAdapter
 import pandas as pd
 
 
-COLUMNS = ('title', 'movieInfo', 'star', 'quote')
+COLUMNS = ('title', 'movie_info', 'star', 'quote')
 
 
 class GoodJobPipeline:
@@ -121,7 +121,7 @@ class GoodJobPipeline:
 
     def process_item(self, item, spider):
         self.data_list.append(
-            (item['title'], item['movieInfo'], item['star'], item['quote']))
+            (item['title'], item['movie_info'], item['star'], item['quote']))
         return item
 
     def close_spider(self, spider):
