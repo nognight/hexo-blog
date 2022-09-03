@@ -24,11 +24,14 @@ tags: python
     [Download Link](https://www.apkmirror.com/apk/fredrik-fornwall/termux-fdroid-version/termux-fdroid-version-0-118-0-release/termux-fdroid-version-0-118-0-android-apk-download/)
 
 # what is crawler
-- 
+- get information
+- from website
 
 ## how to choose crawler framework
 ### scrapy
 - high perfomance
+- open source
+- maybe simple?
 
 ## start our demo
 
