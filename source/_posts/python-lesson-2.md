@@ -16,7 +16,7 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a 
 
 irm get.scoop.sh | iex
 
-scoop bucket add versions
+scoop bucket hexoadd versions
 
 scoop install python310
 
