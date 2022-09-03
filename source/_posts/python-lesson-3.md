@@ -11,6 +11,9 @@ tags: python
 - BigData, DeepLearning
 - Protocal black list (pptp l2tp socks5)
 - DNS cache pollution/poisoning
+
+![GFW](https://raw.githubusercontent.com/nognight/my-diagram/main/GFW.png "GFW")
+
 ## what we can do
 - change hosts
 - change dns
