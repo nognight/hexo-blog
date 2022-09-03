@@ -5,8 +5,12 @@ tags: python
 ---
 
 # about gfw
-
 ## how it works
+- IP black list
+- Keywords block (HTTP POP3 SMTP)
+- BigData, DeepLearning
+- Protocal black list (pptp l2tp socks5)
+- DNS cache pollution/poisoning
 ## what we can do
 - change hosts
 - change dns
