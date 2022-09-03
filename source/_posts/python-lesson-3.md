@@ -41,7 +41,7 @@ pip3 install scrapy
 ```
 ### create  project
 ```
-scrapy createproject good_job
+scrapy startproject good_job
 ```
 
 ### add items
