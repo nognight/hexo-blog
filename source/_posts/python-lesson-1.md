@@ -1,5 +1,5 @@
 ---
-title: Python Starter
+title: Python Starter lesson-1
 date: 2022-08-21 22:30:22
 tags: python
 ---
