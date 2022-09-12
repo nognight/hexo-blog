@@ -144,7 +144,7 @@ USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/537.36
 
 
 
-IMAGES_STORE = '/Users/ts-chaochao.yi/my-project/py/good_job/images'
+IMAGES_STORE = '/Users/nognight/PycharmProjects/good_job/images'
 
 ROBOTSTXT_OBEY = False
 
