@@ -34,8 +34,8 @@ class ImageCollectorSpider(scrapy.Spider):
     def parse(self, response):
         item = ImageItem()
         selector = scrapy.Selector(response)
-        Movies = selector.xpath('//div[@class="item"]')
-        for eachMovie in Movies:
+        movies = selector.xpath('//div[@class="item"]')
+        for eachMovie in movies:
             title = eachMovie.xpath(
                 'div[@class="info"]/div[@class="hd"]/a/span/text()').extract()
             fullTitle = "".join(title)
@@ -46,11 +46,11 @@ class ImageCollectorSpider(scrapy.Spider):
             item['title'] = fullTitle
             item['image_url'] = image_url
             yield item
-        nextLink = selector.xpath('//span[@class="next"]/link/@href').extract()
+        next_link = selector.xpath('//span[@class="next"]/link/@href').extract()
 
-        if nextLink:
-            nextLink = nextLink[0]
-            yield scrapy.Request(urljoin(response.url, nextLink), callback=self.parse)
+        if next_link:
+            next_link = next_link[0]
+            yield scrapy.Request(urljoin(response.url, next_link), callback=self.parse)
 
         pass
 
